@@ -1,12 +1,11 @@
-import Head from 'next/head'
-import Image from 'next/image'
-
+import React from 'react'
+import { FeaturedProduct, FooterBanner, HeroBanner } from '../components'
 
 export default function Home() {
   return (
     <div>
       <>  
-        topBanner
+        <HeroBanner />
 
         <div>
 
@@ -24,6 +23,7 @@ export default function Home() {
 
         </div>
          
+        <FooterBanner />
         
       </>
     </div>
