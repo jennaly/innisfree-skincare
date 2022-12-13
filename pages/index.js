@@ -1,11 +1,14 @@
 import React from 'react'
-import { FeaturedProduct, FooterBanner, HeroBanner } from '../components'
+import { Product, FooterBanner, HeroBanner } from '../components'
+import { client } from '../lib/client';
 
-export default function Home() {
+const Home = ({ featuredProductsData, heroBannerData } ) => {
+
   return (
+
     <div>
       <>  
-        <HeroBanner />
+        <HeroBanner heroBanner={heroBannerData.length && heroBannerData[0]} />
 
         <div>
 
@@ -22,10 +25,46 @@ export default function Home() {
           </div>
 
         </div>
-         
-        <FooterBanner />
         
+        <div>
+
+          <span>Clean beauty made easy</span>
+          <h2>The Latest Essentials</h2>
+
+          <div className="flex justify-center gap-6">
+            {featuredProductsData?.map((product => <Product key={product._id} product={product}/>))}
+          </div>
+
+        </div>
+        
+
+        <FooterBanner />
+
       </>
     </div>
   )
 }
+
+export const getServerSideProps = async () => {
+  const query = '*[_type == "product"]';
+  const products = await client.fetch(query);
+  const featuredProductsData = products.filter(product => product.featured);
+
+  const heroBannerQuery = '*[_type == "heroBanner"]';
+  const heroBannerData = await client.fetch(heroBannerQuery);
+
+  const footerBannerQuery = '*[_type == "footerBanner"]';
+  const footerBannerData = await client.fetch(footerBannerQuery);
+
+
+
+  return {
+    props: {
+      featuredProductsData,
+      heroBannerData,
+      footerBannerData,
+    }
+  }
+}
+
+export default Home;

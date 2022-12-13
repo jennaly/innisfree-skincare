@@ -13,6 +13,12 @@ export default {
 
             },
         },
+  
+        {
+            name: 'name',
+            title: 'Name',
+            type: 'string',
+        },
 
         {
             name: 'slug',
@@ -23,13 +29,6 @@ export default {
                 maxLength: 90,
 
             }
-        },
-
-        
-        {
-            name: 'name',
-            title: 'Name',
-            type: 'string',
         },
         
         {

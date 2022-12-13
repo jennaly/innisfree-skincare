@@ -22,29 +22,10 @@ export default {
             type: 'string',
         },
         {
-            name: 'midText',
-            title: 'MidText',
-            type: 'string',
-        },
-        {
-            name: 'largeText1',
-            title: 'LargeText1',
-            type: 'string',
-        },
-        {
             name: 'desc',
-            title: 'Desc',
+            title: 'Description',
             type: 'string',
         },
-        {
-            name: 'discount',
-            title: 'Discount',
-            type: 'string',
-        },
-        {
-            name: 'saleTime',
-            title: 'SaleTime',
-            type: 'string',
-        },
+    
     ],
   };
