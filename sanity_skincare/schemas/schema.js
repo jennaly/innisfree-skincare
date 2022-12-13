@@ -6,6 +6,8 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 
 import product from './product';
 
+import featuredProducts from './featuredPoducts';
+
 import topBanner from './topBanner';
 
 import bottomBanner from './bottomBanner';
@@ -18,7 +20,8 @@ export default createSchema({
   // to the ones provided by any plugins that are installed
   types: schemaTypes.concat([
     product,
+    featuredProducts,
     topBanner,
-    bottomBanner
+    bottomBanner,
   ]),
 })
