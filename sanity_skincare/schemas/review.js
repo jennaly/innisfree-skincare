@@ -1,34 +1,20 @@
 export default {
-    name: 'featuredProduct',
-    title: 'Featured Product',
+    name: 'review',
+    title: 'Review',
     type: 'document',
     fields: [
         {
             name: 'image',
             title: 'Image',
-            type: 'array',
-            of: [{ type: 'image' }],
+            type: 'image',
             options: {
                 hotspot: true,
-
             },
         },
 
         {
-            name: 'slug',
-            title: 'Slug',
-            type: 'slug',
-            options: {
-                source: 'name',
-                maxLength: 90,
-
-            }
-        },
-
-        
-        {
-            name: 'name',
-            title: 'Name',
+            name: 'customerName',
+            title: 'Customer Name',
             type: 'string',
         },
         
@@ -38,11 +24,10 @@ export default {
             type: 'string',
         },
         
-        
         {
-            name: 'price',
-            title: 'Price',
-            type: 'number',
+            name: 'productName',
+            title: 'Product Name',
+            type: 'string',
         },
 
         {
