@@ -10,9 +10,9 @@ import featuredProduct from './featuredPoduct';
 
 import review from './review';
 
-import topBanner from './topBanner';
+import heroBanner from './heroBanner';
 
-import bottomBanner from './bottomBanner';
+import footerBanner from './footerBanner';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -24,7 +24,8 @@ export default createSchema({
     product,
     featuredProduct,
     review,
-    topBanner,
-    bottomBanner,
+    heroBanner,
+    footerBanner,
+
   ]),
 })
