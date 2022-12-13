@@ -2,7 +2,7 @@ import React from 'react'
 import { Product, FooterBanner, HeroBanner } from '../components'
 import { client } from '../lib/client';
 
-const Home = ({ featuredProductsData, heroBannerData } ) => {
+const Home = ({ featuredProductsData, heroBannerData, footerBannerData } ) => {
 
   return (
 
@@ -38,7 +38,7 @@ const Home = ({ featuredProductsData, heroBannerData } ) => {
         </div>
         
 
-        <FooterBanner />
+        <FooterBanner footerBanner={footerBannerData.length && footerBannerData[0]} />
 
       </>
     </div>
