@@ -19,7 +19,7 @@ const ProductDetails = ({ product, products, productsFromSameLine }) => {
                         <img src={urlFor(image && image[index])} className="max-w-xl rounded-lg shadow-2xl" />
                         <div className="small-images-container flex justify-center gap-6">
                             {image?.map((item, i) => (
-                                <div className="w-36 shadow-xl mt-4">
+                                <div className="w-36 shadow-xl mt-4" key={i}>
                                     <img
                                         key={i} 
                                         src={urlFor(item)}
