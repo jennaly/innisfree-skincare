@@ -14,6 +14,8 @@ const Product = ({ product: { image, name, productLine, slug, price } }) => {
                         width={250}
                         height={250}
                         className="product-image"
+                        onMouseOver={e => (e.currentTarget.src = urlFor(image && image[1]))}
+                        onMouseOut={e => (e.currentTarget.src = urlFor(image && image[0]))}
                     ></img>
 
                 <p>{productLine}</p>
