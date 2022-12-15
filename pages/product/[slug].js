@@ -36,7 +36,7 @@ const ProductDetails = ({ product, products, productsFromSameLine }) => {
                     <div className="max-w-lg">
                         <h2 className="text-5xl font-bold">{name}</h2>
                         <p className="py-6">{details}</p>
-                        <p className="py-6">${price.toFixed(2)}</p>
+                        <p className="py-6">${price}</p>
                         <div className="quantity">
                             <h3>Quantity:</h3>
                             <p className="quantity-desc flex">
