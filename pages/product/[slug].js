@@ -40,9 +40,9 @@ const ProductDetails = ({ product, products, productsFromSameLine }) => {
                         <div className="quantity">
                             <h3>Quantity:</h3>
                             <p className="quantity-desc flex">
-                                <span className="minus outline p-2" onClick=''><AiOutlineMinus /></span>
-                                <span className="num outline p-2 px-4">0</span>
-                                <span className="plus outline p-2" onClick=''><AiOutlinePlus /></span>
+                                <span className="minus outline p-2" onClick={decQty}><AiOutlineMinus /></span>
+                                <span className="num outline p-2 px-4">{qty}</span>
+                                <span className="plus outline p-2" onClick={incQty}><AiOutlinePlus /></span>
                             </p>
 
                             <div className="buttons flex gap-4">
