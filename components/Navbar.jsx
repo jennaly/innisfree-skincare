@@ -9,7 +9,7 @@ const Navbar = () => {
     return (
         <div className="flex justify-between">
              <p className="logo">
-                <Link href="/">JL Headphones</Link>
+                <Link href="/">Innisfree</Link>
             </p>
 
             <button type="button"
