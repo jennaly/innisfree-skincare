@@ -22,7 +22,7 @@ const Product = ({ product: { image, name, productLine, slug, price } }) => {
                 
                 <p>{name}</p>
 
-                <p>${price}</p>
+                <p>${price.toFixed(2)}</p>
 
              
                 </div>
