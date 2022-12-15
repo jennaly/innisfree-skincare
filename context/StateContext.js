@@ -35,7 +35,7 @@ export const StateContext = ({ children }) => {
         toast.success(`${qty} ${product.name} added to the cart.`)
     }
 
-    const incQty = () => {
+    const decQty = () => {
         setQty(prevQty => {
             if (prevQty - 1 < 1) return 1;
 
@@ -43,7 +43,7 @@ export const StateContext = ({ children }) => {
         });
     }
 
-    const decQty = () => {
+    const incQty = () => {
         setQty(prevQty => {
             return prevQty + 1;
         })
