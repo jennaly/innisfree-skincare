@@ -52,7 +52,7 @@ export const StateContext = ({ children }) => {
         foundProduct = cartItems.find(item => item._id === id);
 
         const incCartItemQty = cartItems.map(item => {
-            if (value === 'inc') {
+            if (item._id === foundProduct._id) {
                 return {
                     ...item,
                     quantity: item.quantity + 1,
@@ -65,7 +65,7 @@ export const StateContext = ({ children }) => {
         })
 
         const decCartItemQty = cartItems.map(item => {
-            if (item._id === id) {
+            if (item._id === foundProduct._id) {
                 return {
                     ...item,
                     quantity: item.quantity - 1,
