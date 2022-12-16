@@ -1,32 +1,70 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai'
 
 import { client, urlFor } from '../../lib/client';
 import { Product } from '../../components';
 import { useStateContext } from '../../context/StateContext';
-
-
+import { useRouter } from 'next/router';
 
 const ProductDetails = ({ product, products, productsFromSameLine }) => {
 
+    const router = useRouter(); 
+
     const { image, name, details, price } = product;
-    const [index, setIndex] = useState(0);
-    const { decQty, incQty, qty, onAdd, setShowCart } = useStateContext();
+    const { onAdd, setShowCart } = useStateContext();
+
+    const [productImageIndex, setProductImageIndex] = useState(0);
+    const [qty, setQty] = useState(1);
+
+    const decQty = () => {
+        setQty(prevQty => {
+            if (prevQty - 1 < 1) return 1;
+
+            return prevQty - 1;
+        });
+    }
+
+    const incQty = () => {
+        setQty(prevQty => {
+            return prevQty + 1;
+        })
+    }
+
+    
+    const resetProductLocalState = () => {
+        setProductImageIndex(0);
+        setQty(1);
+    }
+
+    
+    useEffect(() => {
+        const handleRouteChange = () => {
+            resetProductLocalState();
+        }
+        router.events.on("routeChangeComplete", handleRouteChange);
+
+        return () => {
+            router.events.off("routeChangeComplete", () => {
+                console.log("stopped");
+            })
+        }
+    }, [router.events]);
+
 
     return (
         <div>
            <div className="hero min-h-screen bg-base-200">
                 <div className="hero-content flex-col lg:flex-row gap-10">
                     <div>
-                        <img src={urlFor(image && image[index])} className="max-w-xl rounded-lg shadow-2xl" />
+                        <img src={urlFor(image && image[productImageIndex])} className="max-w-xl rounded-lg shadow-2xl" />
                         <div className="small-images-container flex justify-center gap-6">
                             {image?.map((item, i) => (
                                 <div className="w-36 shadow-xl mt-4" key={i}>
                                     <img
                                         key={i} 
                                         src={urlFor(item)}
-                                        className={i === index ? 'small-image selected-image' : 'small-image'}
-                                        onMouseEnter={() => setIndex(i)}
+                                        className={i === productImageIndex ? 'small-image selected-image' : 'small-image'}
+                                        onMouseEnter={() => setProductImageIndex(i)}
                                     />
                                 </div>
                             ))}

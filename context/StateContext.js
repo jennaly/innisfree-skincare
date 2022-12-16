@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState } from 'react';
 import { toast } from 'react-hot-toast';
 
 const Context = createContext();
@@ -8,7 +8,6 @@ export const StateContext = ({ children }) => {
     const [cartItems, setCartItems] = useState([]);
     const [totalPrice, setTotalPrice] = useState(0);
     const [totalQuantities, setTotalQuantities] = useState(0);
-    const [qty, setQty] = useState(1);
 
     let foundProduct;
 
@@ -34,7 +33,7 @@ export const StateContext = ({ children }) => {
             setCartItems([...cartItems, {...product}]);
         }
 
-        toast.success(`${qty} ${product.name} added to the cart.`)
+        toast.success(`${quantity} ${product.name} added to the cart.`)
     }
 
     const onRemove = (product) => {
@@ -91,21 +90,6 @@ export const StateContext = ({ children }) => {
         }
     }
 
-    const decQty = () => {
-        setQty(prevQty => {
-            if (prevQty - 1 < 1) return 1;
-
-            return prevQty - 1;
-        });
-    }
-
-    const incQty = () => {
-        setQty(prevQty => {
-            return prevQty + 1;
-        })
-
-        
-    }
 
     return (
         <Context.Provider
@@ -115,15 +99,12 @@ export const StateContext = ({ children }) => {
                 cartItems,
                 totalPrice,
                 totalQuantities,
-                qty,
-                incQty,
-                decQty,
                 onAdd,
                 onRemove,
                 toggleCartItemQuantity,
                 setCartItems,
                 setTotalPrice,
-                setTotalQuantities
+                setTotalQuantities,
             }}
         >
             {children}
