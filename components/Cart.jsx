@@ -46,7 +46,7 @@ const Cart = () => {
                             <div>
                                 <div className="flex top">
                                     <h5>{item.name}</h5>
-                                    <h4>${item.price}</h4>
+                                    <h4>${(item.price).toFixed(2)}</h4>
                                 </div>
                                 <div className="flex bottom justify-between">
                                     <div>
