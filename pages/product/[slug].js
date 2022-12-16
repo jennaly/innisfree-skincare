@@ -12,9 +12,13 @@ const ProductDetails = ({ product, products, productsFromSameLine }) => {
 
     const { image, name, details, price } = product;
     const { onAdd, setShowCart } = useStateContext();
-
     const [productImageIndex, setProductImageIndex] = useState(0);
     const [qty, setQty] = useState(1);
+
+    const handleBuyNow = () => {
+        onAdd(product, qty)
+        setShowCart(true);
+    }
 
     const decQty = () => {
         setQty(prevQty => {
@@ -85,7 +89,7 @@ const ProductDetails = ({ product, products, productsFromSameLine }) => {
 
                             <div className="buttons flex gap-4">
                                 <button type="button" className="add-to-cart btn btn-primary" onClick={() => onAdd(product, qty)}>Add to Cart</button>
-                                <button type="button" className="buy-now btn btn-secondary" onClick=''>Buy Now</button>
+                                <button type="button" className="buy-now btn btn-secondary" onClick={ handleBuyNow }>Buy Now</button>
                             </div>
                         </div>
                     </div>
