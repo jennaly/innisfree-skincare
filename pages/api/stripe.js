@@ -14,8 +14,8 @@ export default async function handler(req, res) {
           payment_method_types: ['card'],
           billing_address_collection: 'auto',
           shipping_options: [
-              { shipping_rate: `${(process.env.STRIPE_EXPRESS_SHIPPING_RATE_ID)}`},
-              { shipping_rate: `${(process.env.STRIPE_FREE_SHIPPING_RATE_ID)}`},
+              { shipping_rate: `${process.env.STRIPE_EXPRESS_SHIPPING_RATE_ID}`},
+              { shipping_rate: `${process.env.STRIPE_FREE_SHIPPING_RATE_ID}`},
           ],
   
           line_items: req.body.map((item) => {
