@@ -1,6 +1,7 @@
 import React from 'react'
 import { Product, FooterBanner, HeroBanner } from '../components'
 import { client } from '../lib/client';
+import Link from 'next/link';
 
 const Home = ({ featuredProductsData, heroBannerData, footerBannerData } ) => {
 
@@ -10,24 +11,18 @@ const Home = ({ featuredProductsData, heroBannerData, footerBannerData } ) => {
       <>  
         <HeroBanner heroBanner={heroBannerData.length && heroBannerData[0]} />
 
-        <div>
+        <div className="hero min-h-screen bg-base-200">
+          <div className="hero-content flex-col lg:flex-row gap-5">
+            <img src="../jeju_island.jpeg" className=" w-full lg:max-w-xl rounded-lg shadow-2xl" />
+            <div className="max-w-lg lg:px-10">
+              <h2 className="text-5xl font-bold">Where Beauty Meets Sustainability</h2>
+              <p className="py-6">Our skin care products are formulated with an average of 80% of naturally-derived ingredients responsively-sourced from the pure and protected island of Jeju. From its lush forests to its crystal sea, we search every corner to handpick the finest ingredients nature has to offer. </p>
 
-          <div className="hero min-h-screen bg-base-200">
-            <div className="hero-content flex-col lg:flex-row gap-10">
-              <img src="https://images.unsplash.com/photo-1609357912334-e96886c0212b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY3MDg5OTU1MA&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080" className="max-w-xl rounded-lg shadow-2xl" />
-              <div className="max-w-lg">
-                <h2 className="text-5xl font-bold">Custom Solutions for Your Skin’s Unique Needs</h2>
-                <p className="py-6">Shopping for skincare at the drugstore is frustrating. Buy it, try it,
-                  toss it, repeat. Sound familiar?</p>
-                <button className="btn btn-primary">Shop Now</button>
-              </div>
             </div>
           </div>
-
         </div>
-        
-        <div>
 
+        <div>
           <span>Clean beauty made easy</span>
           <h2>The Latest Essentials</h2>
 
