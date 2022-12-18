@@ -9,7 +9,7 @@ const Navbar = () => {
     const { showCart, setShowCart, totalQuantities } = useStateContext();
     return (
 
-        <div className="navbar bg-base-100">
+        <div className="navbar-container navbar bg-base-100">
 
             <div className="navbar-start">
 
@@ -38,7 +38,7 @@ const Navbar = () => {
 
             </div>
 
-            <div className="navbar-end">
+            <div className="navbar-end navbar-cart">
 
                 <div className="indicator">
                     <button type="button"
