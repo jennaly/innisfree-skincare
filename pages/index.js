@@ -9,8 +9,8 @@ const Home = ({ featuredProductsData, heroBannerData, footerBannerData } ) => {
       <>  
         <HeroBanner heroBanner={heroBannerData.length && heroBannerData[0]} />
 
-      <div className="min-h-screen flex flex-col justify-center px-8">
-        <div className="hero bg-base-100 py-8 my-10" id="about">
+      <div className="min-h-screen flex flex-col justify-center px-8" id="about">
+        <div className="hero bg-base-100 py-8 my-10">
           <div className="flex flex-col lg:flex-row gap-10">
             <img src="../jeju_island.jpeg" className="lg:max-w-xl rounded-lg shadow-2xl" />
             <div className="max-w-lg lg:w-2/3 lg:my-auto">
@@ -20,7 +20,7 @@ const Home = ({ featuredProductsData, heroBannerData, footerBannerData } ) => {
           </div>
         </div>
 
-        <div className="hero bg-base-100 py-8 my-10" id="about">
+        <div className="hero bg-base-100 py-8 my-10">
           <div className="flex flex-col lg:flex-row gap-10">
             <div className="max-w-lg lg:my-auto">
               <h3 className="text-3xl lg:w-2/3 lg:text-5xl font-bold">Skincare Powered by Nature's Finest</h3>
