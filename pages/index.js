@@ -29,9 +29,9 @@ const Home = ({ featuredProductsData, heroBannerData, footerBannerData } ) => {
             </div>
 
             <div className="flex flex-col lg:flex-row">
-              {featuredProductsData?.map(product => {
+              {featuredProductsData?.map((product, index) => {
                 return (
-                  <div className="card w-full">
+                  <div className="card w-full" key={index}>
                       <div className="card-body">
                         <Product key={product._id} product={product} dimensions={500}/>
                       </div>
