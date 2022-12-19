@@ -11,7 +11,7 @@ const Home = ({ featuredProductsData, heroBannerData, footerBannerData } ) => {
       <>  
         <HeroBanner heroBanner={heroBannerData.length && heroBannerData[0]} />
 
-        <div className="hero min-h-screen bg-base-100 p-8">
+        <div className="hero min-h-screen bg-base-100 p-8" id="about">
           <div className="flex flex-col lg:flex-row gap-10">
             <img src="../jeju_island.jpeg" className=" w-full lg:max-w-xl rounded-lg shadow-2xl" />
             <div className="max-w-lg lg:px-10 lg:my-auto">
@@ -22,7 +22,7 @@ const Home = ({ featuredProductsData, heroBannerData, footerBannerData } ) => {
           </div>
         </div>
 
-        <div className="hero min-h-screen flex flex-col justify-center bg-base-100 gap-8">
+        <div className="hero min-h-screen flex flex-col justify-center bg-base-100 gap-8" id="featured">
             <div className="flex flex-col items-center gap-2 px-8">
               <span className="mt-6 lg:text-xl">Clean Beauty Made Easy</span>
               <h2 className="text-5xl font-bold text-center">The Latest Essentials</h2>
