@@ -3,31 +3,31 @@ import Link from 'next/link';
 
 import { urlFor } from '../lib/client';
 
-const Product = ({ product: { image, name, productLine, slug, price } }) => {
+const Product = ({ product: { image, name, productLine, slug, price }, dimensions }) => {
 
     return (
-        <div className="card w-96 bg-bg-100 shadow-xl">
-            <Link href={`/product/${slug.current}`}>
-                <div className="card-body">
-                    <img 
-                        src={urlFor(image && image[0])}
-                        width={250}
-                        height={250}
-                        className="product-image"
-                        onMouseOver={e => (e.currentTarget.src = urlFor(image && image[1]))}
-                        onMouseOut={e => (e.currentTarget.src = urlFor(image && image[0]))}
-                    ></img>
+        
+        <Link href={`/product/${slug.current}`}>
+            <div className="flex flex-col justify-between gap-2">
+                <img 
+                    src={urlFor(image && image[0])}
+                    width={dimensions}
+                    height={dimensions}
+                    className="product-image"
+                    onMouseOver={e => (e.currentTarget.src = urlFor(image && image[1]))}
+                    onMouseOut={e => (e.currentTarget.src = urlFor(image && image[0]))}
+                ></img>
 
                 <p>{productLine}</p>
                 
                 <p>{name}</p>
 
-                <p>${price.toFixed(2)}</p>
+                <p className="font-bold">${price.toFixed(2)}</p>
 
-             
-                </div>
-            </Link>
-        </div>
+            
+            </div>
+        </Link>
+        
     )
 }
 
