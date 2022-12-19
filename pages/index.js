@@ -11,24 +11,33 @@ const Home = ({ featuredProductsData, heroBannerData, footerBannerData } ) => {
       <>  
         <HeroBanner heroBanner={heroBannerData.length && heroBannerData[0]} />
 
-        <div className="hero min-h-screen bg-base-200">
-          <div className="hero-content flex-col lg:flex-row gap-5">
+        <div className="hero min-h-screen bg-base-100 p-8">
+          <div className="flex flex-col lg:flex-row gap-10">
             <img src="../jeju_island.jpeg" className=" w-full lg:max-w-xl rounded-lg shadow-2xl" />
-            <div className="max-w-lg lg:px-10">
-              <h2 className="text-5xl font-bold">Where Beauty Meets Sustainability</h2>
+            <div className="max-w-lg lg:px-10 lg:my-auto">
+              <h3 className="text-3xl lg:text-5xl font-bold">Where Beauty Meets Sustainability</h3>
               <p className="py-6">Our skin care products are formulated with an average of 80% of naturally-derived ingredients responsively-sourced from the pure and protected island of Jeju. From its lush forests to its crystal sea, we search every corner to handpick the finest ingredients nature has to offer. </p>
 
             </div>
           </div>
         </div>
 
-        <div>
-          <span>Clean beauty made easy</span>
-          <h2>The Latest Essentials</h2>
+        <div className="hero min-h-screen flex flex-col justify-center bg-base-100 gap-8">
+            <div className="flex flex-col items-center gap-2">
+              <span className="mt-6 lg:text-xl">Clean Beauty Made Easy</span>
+              <h2 className="text-5xl font-bold text-center">The Latest Essentials</h2>
+            </div>
 
-          <div className="flex justify-center gap-6">
-            {featuredProductsData?.map((product => <Product key={product._id} product={product}/>))}
-          </div>
+            <div className="flex flex-col lg:flex-row">
+              {featuredProductsData?.map(product => {
+                return (
+                  <div className="card w-full">
+                      <div className="card-body">
+                        <Product key={product._id} product={product} dimensions={500}/>
+                      </div>
+                  </div>
+                )})}
+            </div>
 
         </div>
         
