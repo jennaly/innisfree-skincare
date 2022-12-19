@@ -7,7 +7,7 @@ import { urlFor } from '../lib/client';
 const FooterBanner = ({ footerBanner }) => {
     return (
         <div>
-           <div className="hero lg:h-[50rem]" style={{ backgroundImage: `url(${urlFor(footerBanner.image)})` }}>
+           <div className="hero lg:h-[35rem]" style={{ backgroundImage: `url(${urlFor(footerBanner.image)})` }}>
                 <div className="hero-overlay bg-opacity-60"></div>
              
                 <div className="flex h-full w-full items-center justify-center container mx-auto px-8 mb-40 my-auto">
