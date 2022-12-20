@@ -7,11 +7,11 @@ import { useStateContext } from '../../context/StateContext';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 
-const ProductDetails = ({ product, products, productsFromSameLine }) => {
+const ProductDetails = ({ product, productsFromSameLine }) => {
 
     const router = useRouter(); 
 
-    const { image, name, details, price } = product;
+    const { image, name, details, price, ingredients, instruction } = product;
     const { onAdd, setShowCart } = useStateContext();
     const [productImageIndex, setProductImageIndex] = useState(0);
     const [qty, setQty] = useState(1);
@@ -159,7 +159,6 @@ export const getStaticProps = async ({ params: { slug }}) => {
 
     return {
         props: {
-          products,
           product,
           productsFromSameLine
         }

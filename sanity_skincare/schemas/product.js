@@ -45,8 +45,20 @@ export default {
         },
 
         {
-            name: 'details',
-            title: 'Details',
+            name: 'description',
+            title: 'Description',
+            type: 'string',
+        },
+
+        {
+            name: 'ingredients',
+            title: 'Ingredients',
+            type: 'string',
+        },
+
+        {
+            name: 'instruction',
+            title: 'Instruction',
             type: 'string',
         },
 
