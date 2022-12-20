@@ -11,7 +11,7 @@ const ProductDetails = ({ product, productsFromSameLine }) => {
 
     const router = useRouter(); 
 
-    const { image, name, details, price, ingredients, instruction } = product;
+    const { image, name, description, price, ingredients, instruction } = product;
     const { onAdd, setShowCart } = useStateContext();
     const [productImageIndex, setProductImageIndex] = useState(0);
     const [qty, setQty] = useState(1);
@@ -87,7 +87,7 @@ const ProductDetails = ({ product, productsFromSameLine }) => {
                     <div className="flex flex-col max-w-lg mx-auto lg:mx-0 my-auto gap-4">
                         <h1 className="text-3xl font-bold">{name}</h1>
                         <h2 className="">${price.toFixed(2)}</h2>
-                        <p className="">{details}</p>
+                        <p className="">{description}</p>
                         <div className="quantity flex flex-row w-full items-center justify-between gap-4">
                             <h3>Quantity</h3>
                             <p className="flex product-quantity-selector rounded-md items-center w-full p-2 justify-between bg-base-200">
@@ -99,6 +99,24 @@ const ProductDetails = ({ product, productsFromSameLine }) => {
                         <div className="buttons flex justify-between gap-4">
                             <button type="button" className="add-to-cart btn bg-green-700 hover:bg-green-600 border-none" onClick={() => onAdd(product, qty)}>Add to Cart</button>
                             <button type="button" className="buy-now btn btn-secondary bg-base-200 hover:bg-base-100 border border-green-700 hover:border-green-600 text-black" onClick={ handleBuyNow }>Buy Now</button>
+                        </div>
+
+                        <div tabIndex={0} className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-md">
+                            <div className="collapse-title text-xl font-medium">
+                                Ingredients
+                            </div>
+                            <div className="collapse-content"> 
+                                <p>{ingredients}</p>
+                            </div>
+                        </div>
+
+                        <div tabIndex={0} className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-md">
+                            <div className="collapse-title text-xl font-medium">
+                                Instruction
+                            </div>
+                            <div className="collapse-content"> 
+                                <p>{instruction}</p>
+                            </div>
                         </div>
                     </div>
                 </div>
