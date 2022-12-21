@@ -59,11 +59,11 @@ const ProductDetails = ({ product, productsFromSameLine }) => {
     return (
         <div>
             <div className="bg-base-100 px-5px">
-                <div className="text-sm breadcrumbs flex lg:text-lg lg:mt-3 ">
-                        <ul className="mx-auto">
+                <div className="text-xs breadcrumbs flex lg:text-lg lg:mt-3 lg:text-sm">
+                        <ul className="mx-auto flex-wrap justify-center">
                             <li><Link href="/">Home</Link></li>
                             <li><Link href="/">Products</Link></li>
-                            <li><Link href="/">{name}</Link></li>
+                            <li>{name}</li>
                         </ul>
                 </div>
                 
@@ -122,11 +122,11 @@ const ProductDetails = ({ product, productsFromSameLine }) => {
                 </div>
 
 
-                <div className="hero flex flex-col mx-auto bg-base-100 gap-2 mt-10 w-11/12 lg:w-10/12">
+                <div className="flex flex-col mx-auto bg-base-100 gap-2 mt-10 w-11/12 xl:w-10/12 justify-center">
     
                     <h3 className="text-3xl font-bold text-center">Explore the {product.productLine} Collection</h3>
 
-                    <div className="flex flex-col lg:flex-row">
+                    <div className="flex flex-col lg:flex-row justify-center mx-auto">
                     {productsFromSameLine.map((product, index) => {
                         return (
                         <div className="card" key={index}>
