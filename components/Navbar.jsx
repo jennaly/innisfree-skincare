@@ -58,7 +58,7 @@ const Navbar = () => {
 
             <div className="navbar-center ">
 
-                <p className="btn btn-ghost normal-case text-xl hidden lg:flex">       
+                <p className="btn btn-ghost normal-case text-4xl hidden lg:flex">       
                     <Link href="/">Innisfree</Link>
                 </p>
 
