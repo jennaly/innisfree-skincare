@@ -85,7 +85,7 @@ const ProductDetails = ({ product, productsFromSameLine }) => {
                     </div>
                     
                     <div className="flex flex-col max-w-lg mx-auto lg:mx-0 my-auto gap-4">
-                        <h1 className="text-3xl font-bold">{name}</h1>
+                        <h1 className="text-4xl font-bold">{name}</h1>
                         <h2 className="">${price.toFixed(2)}</h2>
                         <p className="">{description}</p>
                         <div className="quantity flex flex-row w-full items-center justify-between gap-4">
