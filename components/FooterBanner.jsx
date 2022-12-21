@@ -7,21 +7,22 @@ import { urlFor } from '../lib/client';
 const FooterBanner = ({ footerBanner }) => {
     return (
         <div>
-           <div className="hero h-96" style={{ backgroundImage: `url(${urlFor(footerBanner.image)})` }}>
+           <div className="hero lg:h-[35rem]" style={{ backgroundImage: `url(${urlFor(footerBanner.image)})` }}>
                 <div className="hero-overlay bg-opacity-60"></div>
-                <div className="hero-content text-right text-neutral-content">
-                    <div className="max-w-md">
-                    <h1 className="mb-5 text-5xl font-bold">Invincible skin starts here</h1>
-                    <p className="mb-5">The best skincare and acne products.</p>
-                    
-                    <div>
-                        <Link href=''>
-                            <button type="button" className="btn btn-primary">{ footerBanner.buttonText }</button>
-                        </Link>
-                    </div>
-                    
+             
+                <div className="flex h-full w-full items-center justify-center container mx-auto px-8 mb-40 my-auto">
+                    <div className="flex flex-col gap-5 max-w-2xl text-left">
+
+                        <h1 className="text-2xl tracking-wide text-white lg:text-4xl md:w-1/2">{ footerBanner.desc }</h1>
+                        
+                        <div>
+                            <Link href=''>
+                            <button type="button" className="transform rounded-md bg-green-700 px-8 py-3 text-sm font-medium capitalize tracking-wide text-white transition-colors duration-200 hover:bg-green-600 focus:bg-green-600 focus:outline-none sm:mx-2 lg:mx-0">{ footerBanner.buttonText }</button>
+                            </Link>
+                        </div>
                     </div>
                 </div>
+                
             </div>
         </div>
     )

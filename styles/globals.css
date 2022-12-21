@@ -19,12 +19,132 @@ a {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
+.navbar-container{
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  position: relative;
+}
+
+.navbar-cart{
+  padding: 20px;
+}
+
+.cart-icon{
+  font-size: 25px;
+  color: gray;
+  cursor: pointer;
+  position: relative;
+  transition: transform .4s ease;
+  border: none;
+  background-color: transparent;
+}
+
+.cart-icon:hover{
+  transform: scale(1.1,1.1);
+}
+
+.cart-item-qty{
+  position: absolute;
+  right: -10px;
+  font-size: 12px;
+  color: #eee;
+  background-color: #f02d34;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  text-align: center;
+  font-weight: 600;
+
+}
+
+.cart-wrapper{
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 100;
+  /* will-change: transform; */
+  transition: all 1s ease-in-out;
+
+}
+.cart-container{
+  height: 100vh;
+  background-color: white;
+  float: right;
+  position: relative;
+  
+}
+
+.cart-heading{
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  gap: 2px;
+  border: none;
+  background-color: transparent;
+}
+
+.cart-heading .heading{
+  margin-left: 10px;
+}
+.cart-num-items{
+  margin-left: 10px;
+  color: #f02d34;
+}
+.empty-cart{
+  margin:40px;
+  text-align:center;
+}
+.empty-cart h3{
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.cart-product-image{
+  width: 180px ;
+  height: 150px;
+  border-radius: 15px;
+ background-color: #ebebeb;
+}
+
+.cart-bottom{
+  position: absolute;
+  bottom: 12px;
+  right: 5px;
+  width: 100%;
+  padding: 30px 65px;
+
+}
+
+.icons{
+  font-size: 30px;
+  display: flex;
+  gap: 10px;
+}
+
+.product-container{
+  width: 80%;
+}
+
+.product-quantity-selector{
+  display:inline-block;
+}
+
+.product-quantity{
+  display:inline-block;
+}
+
+.add-to-cart,
+.buy-now{
+  width:48%
+}
+
+@media screen and (max-width:425px) {
+  .cart-heading{
+    margin-top: 35px;
   }
 }
