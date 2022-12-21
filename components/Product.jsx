@@ -11,9 +11,8 @@ const Product = ({ product: { image, name, productLine, slug, price }, dimension
             <div className="flex flex-col justify-between gap-2">
                 <img 
                     src={urlFor(image && image[0])}
-                    width={dimensions}
                     height={dimensions}
-                    className="product-image"
+                    width={dimensions}
                     onMouseOver={e => (e.currentTarget.src = urlFor(image && image[1]))}
                     onMouseOut={e => (e.currentTarget.src = urlFor(image && image[0]))}
                 ></img>

@@ -62,7 +62,7 @@ const ProductDetails = ({ product, productsFromSameLine }) => {
                 <div className="text-xs breadcrumbs flex lg:text-lg lg:mt-3 lg:text-sm">
                         <ul className="mx-auto flex-wrap justify-center">
                             <li><Link href="/">Home</Link></li>
-                            <li><Link href="/">Products</Link></li>
+                            <li><Link href="/product/all">Products</Link></li>
                             <li>{name}</li>
                         </ul>
                 </div>
@@ -131,7 +131,7 @@ const ProductDetails = ({ product, productsFromSameLine }) => {
                         return (
                         <div className="card" key={index}>
                             <div className="card-body">
-                                <Product key={product._id} product={product} dimensions={300}/>
+                                <Product key={product._id} product={product} dimensions={235}/>
                             </div>
                         </div>
                         )})}

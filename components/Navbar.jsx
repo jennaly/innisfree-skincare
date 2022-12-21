@@ -26,7 +26,7 @@ const Navbar = () => {
                             </a>
                             <ul className="p-2 bg-base-100">
                                 <li><Link href="#featured">New</Link></li>
-                                <li><Link href="/">All Products</Link></li>
+                                <li><Link href="/product/all">All Products</Link></li>
                             </ul>
                         </li>
                         <li><Link href="#about">About Us</Link></li>
@@ -44,7 +44,7 @@ const Navbar = () => {
                         </Link>
                         <ul className="p-2 bg-base-100">
                             <li><Link href="#featured">New</Link></li>
-                            <li><Link href="/">All Products</Link></li>
+                            <li><Link href="/product/all">All Products</Link></li>
                         </ul>
                     </li>
                     <li><Link href="#about">About Us</Link></li>

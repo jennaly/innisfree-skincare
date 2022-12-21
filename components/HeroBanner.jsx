@@ -19,7 +19,7 @@ const HeroBanner = ({ heroBanner }) => {
                         
 
                         <div className="mt-8 flex flex-col space-y-3 sm:-mx-2 sm:flex-row sm:justify-center sm:space-y-0">
-                            <Link href="">
+                            <Link href="/product/all">
                                 <button type="button" className="transform rounded-md bg-green-700 px-8 py-3 text-sm font-medium capitalize tracking-wide text-white transition-colors duration-200 hover:bg-green-600 focus:bg-green-600 focus:outline-none sm:mx-2">{ heroBanner.buttonText }</button>
                             </Link>
                         </div>

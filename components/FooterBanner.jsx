@@ -16,7 +16,7 @@ const FooterBanner = ({ footerBanner }) => {
                         <h1 className="text-2xl tracking-wide text-white lg:text-4xl md:w-1/2">{ footerBanner.desc }</h1>
                         
                         <div>
-                            <Link href=''>
+                            <Link href='/product/all'>
                             <button type="button" className="transform rounded-md bg-green-700 px-8 py-3 text-sm font-medium capitalize tracking-wide text-white transition-colors duration-200 hover:bg-green-600 focus:bg-green-600 focus:outline-none sm:mx-2 lg:mx-0">{ footerBanner.buttonText }</button>
                             </Link>
                         </div>
