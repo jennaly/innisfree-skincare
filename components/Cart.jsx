@@ -48,14 +48,14 @@ const Cart = () => {
                         </button>
 
                     {cartItems.length < 1 && (
-                        <div className="empty-cart">
+                        <div className="flex flex-col gap-5">
                             <AiOutlineShopping size={150} className="mx-auto" />
-                            <h3>Your shopping bag is empty</h3>
+                            <h3 className="text-lg mx-auto">Your cart is currently empty</h3>
                             <Link href="/">
                                 <button 
                                     type="button"
                                     onClick={() => setShowCart(false)}
-                                    className="btn"
+                                    className="btn bg-green-700 hover:bg-green-600 border-none w-full"
                                 >
                                     Continue Shopping
                                 </button>
