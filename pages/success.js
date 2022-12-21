@@ -21,26 +21,20 @@ const Success = () => {
     }, []);
 
     return (
-        <div className="success-wrapper">
-        <div className="success">
-            <p className="icon">
-                <BsBagCheckFill />    
-            </p>    
-            <h2>Thank you for your order! </h2>
-            <p className="email-msg">Check your email inbox for the receipt.</p>
-            <p className="description">
-                If you have any questions, please email
-                <a className="email" href="mailto:order@example.com">
-                    order@example.com
-                </a>
-            </p>
-            <Link href="/">
-                <button type="button" width="300px" className="btn">
-                    Continue Shopping
-                </button>
-            </Link>
-        </div>        
-    </div>
+        <div className="hero min-h-screen bg-base-100">
+            <div className="hero-content text-center flex flex-col">
+                <div className="max-w-md">
+                    <h1 className="text-5xl font-bold">Thank you for your order! </h1>
+                    <p className="mt-4">Check your email inbox for the receipt.</p>
+                    <p>If you have any questions, please email
+                        <a className="email" href="mailto:order@example.com">
+                            order@example.com
+                        </a>
+                    </p>
+                    <button className="btn bg-green-700 hover:bg-green-600 border-none w-full mt-4">Continue Shopping</button>
+                </div>
+            </div>
+        </div>
     )
 }
 
