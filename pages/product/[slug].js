@@ -58,7 +58,7 @@ const ProductDetails = ({ product, productsFromSameLine }) => {
 
     return (
         <div>
-            <div className="min-h-screen bg-base-100 px-5px">
+            <div className="bg-base-100 px-5px">
                 <div className="text-sm breadcrumbs flex lg:text-lg lg:mt-3 ">
                         <ul className="mx-auto">
                             <li><Link href="/">Home</Link></li>
@@ -68,7 +68,7 @@ const ProductDetails = ({ product, productsFromSameLine }) => {
                 </div>
                 
                 <div className="flex flex-col lg:flex-row gap-10 mt-3 lg:mt-10 w-11/12 lg:w-10/12 mx-auto justify-center">
-                    <div className="md:max-w-lg md:mx-auto lg:mx-0 lg:w-1/3">
+                    <div className="md:max-w-lg md:mx-auto lg:mx-0 lg:max-w-xl">
                         <img src={urlFor(image && image[productImageIndex])} className="shadow-2xl w-full product-image" />
                         <div className="small-images-container flex justify-between gap-6 w-full">
                             {image?.map((item, i) => (
@@ -121,25 +121,26 @@ const ProductDetails = ({ product, productsFromSameLine }) => {
                     </div>
                 </div>
 
-            </div>
 
-            <div className="hero flex flex-col justify-center bg-base-100 gap-8 my-10">
-                <div className="flex flex-col items-center gap-2 px-8">
-                    <h3 className="text-5xl font-bold text-center">Explore the {product.productLine} Collection</h3>
-                </div>
+                <div className="hero flex flex-col mx-auto bg-base-100 gap-2 mt-10 w-11/12 lg:w-10/12">
+    
+                    <h3 className="text-3xl font-bold text-center">Explore the {product.productLine} Collection</h3>
 
-                <div className="flex flex-col lg:flex-row">
-                {productsFromSameLine.map((product, index) => {
-                    return (
-                    <div className="card w-full" key={index}>
-                        <div className="card-body">
-                            <Product key={product._id} product={product} dimensions={500}/>
+                    <div className="flex flex-col lg:flex-row">
+                    {productsFromSameLine.map((product, index) => {
+                        return (
+                        <div className="card" key={index}>
+                            <div className="card-body">
+                                <Product key={product._id} product={product} dimensions={300}/>
+                            </div>
                         </div>
+                        )})}
                     </div>
-                    )})}
                 </div>
-            </div>
             
+            </div>
+
+          
         </div> 
     )
 }
