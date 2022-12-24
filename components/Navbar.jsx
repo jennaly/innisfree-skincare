@@ -25,11 +25,11 @@ const Navbar = () => {
                                 <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"/></svg>
                             </a>
                             <ul className="p-2 bg-base-100">
-                                <li><Link href="#featured">New</Link></li>
+                                <li><Link href="/#featured">New</Link></li>
                                 <li><Link href="/product/all">All Products</Link></li>
                             </ul>
                         </li>
-                        <li><Link href="#about">About Us</Link></li>
+                        <li><Link href="/#about">About Us</Link></li>
                     </ul>
                 </div>
 
@@ -43,11 +43,11 @@ const Navbar = () => {
                             </div>
                         </Link>
                         <ul className="p-2 bg-base-100">
-                            <li><Link href="#featured">New</Link></li>
+                            <li><Link href="/#featured">New</Link></li>
                             <li><Link href="/product/all">All Products</Link></li>
                         </ul>
                     </li>
-                    <li><Link href="#about">About Us</Link></li>
+                    <li><Link href="/#about">About Us</Link></li>
                 </ul>
 
                 <p className="btn btn-ghost normal-case text-xl lg:hidden">
