@@ -24,8 +24,8 @@ const Home = ({ featuredProductsData, heroBannerData, footerBannerData } ) => {
           <div className="hero bg-base-100 lg:py-8 mb-10">
             <div className="flex flex-col lg:flex-row lg:gap-10 md:max-w-lg lg:max-w-full">
               <div className="max-w-lg lg:my-auto">
-                <h3 className="text-3xl lg:w-2/3 lg:text-5xl font-bold">Skincare Powered by Nature's Finest</h3>
-                <p className="py-6">Innisfree’s proprietary extraction methods preserve the purity and potency of these wholesome ingredients from plant to bottle, offering advanced formulas that safely address all skin concerns without the use of harmful chemicals and preservatives.</p>
+                <h3 className="text-3xl lg:w-2/3 lg:text-5xl font-bold">Skincare Powered by Nature&apos;s Finest</h3>
+                <p className="py-6">Innisfree&apos;s proprietary extraction methods preserve the purity and potency of these wholesome ingredients from plant to bottle, offering advanced formulas that safely address all skin concerns without the use of harmful chemicals and preservatives.</p>
               </div>
               <img src="../skincare_model.jpg" className="lg:max-w-xl rounded-lg shadow-2xl" />
             </div>
