@@ -36,7 +36,7 @@ const Cart = () => {
 
 
     return (
-        <div className="cart-wrapper" ref={cartRef}>
+        <div className="cart-wrapper min-h-screen" ref={cartRef}>
             <div className="cart-container w-full md:w-[450px] xl:w-[500px] px-5 lg:px-10 py-10 lg:py-5 flex flex-col justify-between">
                 <div>
                     <button 
