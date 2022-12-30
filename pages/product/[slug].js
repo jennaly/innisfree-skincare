@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai'
 
 import { client, urlFor } from '../../lib/client';
-import { Product } from '../../components';
+import { Product, FooterBanner } from '../../components';
 import { useStateContext } from '../../context/StateContext';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 
-const ProductDetails = ({ product, productsFromSameLine }) => {
+const ProductDetails = ({ product, productsFromSameLine, footerBannerData }) => {
 
     const router = useRouter(); 
 
@@ -59,7 +59,7 @@ const ProductDetails = ({ product, productsFromSameLine }) => {
     return (
         <div>
             <div className="bg-base-100 px-5px">
-                <div className="text-xs breadcrumbs flex lg:text-lg lg:mt-3 lg:text-sm">
+                <div className="text-xs breadcrumbs flex lg:mt-3 lg:text-sm">
                         <ul className="mx-auto flex-wrap justify-center">
                             <li><Link href="/">Home</Link></li>
                             <li><Link href="/product/all">Products</Link></li>
@@ -122,7 +122,7 @@ const ProductDetails = ({ product, productsFromSameLine }) => {
                 </div>
 
 
-                <div className="flex flex-col mx-auto bg-base-100 gap-2 mt-10 w-11/12 xl:w-10/12 justify-center">
+                <div className="flex flex-col mx-auto bg-base-100 gap-2 m-10 w-11/12 xl:w-10/12 justify-center">
     
                     <h3 className="text-3xl font-bold text-center">Explore the {product.productLine} Collection</h3>
 
@@ -139,7 +139,8 @@ const ProductDetails = ({ product, productsFromSameLine }) => {
                 </div>
             
             </div>
-
+            
+            <FooterBanner footerBanner={footerBannerData.length && footerBannerData[0]} />
           
         </div> 
     )
@@ -175,13 +176,17 @@ export const getStaticProps = async ({ params: { slug }}) => {
     const products = await client.fetch(productsQuery);
     const productsFromSameLine = products.filter(e => e.productLine === product.productLine && e._id !== product._id);
     
+    const footerBannerQuery = '*[_type == "footerBanner"]';
+    const footerBannerData = await client.fetch(footerBannerQuery);
 
     return {
         props: {
           product,
-          productsFromSameLine
+          productsFromSameLine,
+          footerBannerData
         }
     }
 }
+
 
 export default ProductDetails
